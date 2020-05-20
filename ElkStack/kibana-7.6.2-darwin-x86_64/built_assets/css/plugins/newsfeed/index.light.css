@@ -1,0 +1,49 @@
+/* 1 */
+/* 1 */
+/**
+ * 1. Extend beta badges to at least 40% of the container's width
+ * 2. Fix for IE to ensure badges are visible outside of a <button> tag
+ */
+/**
+ * 1. Apply margin to all but last item in the flex.
+ * 2. Margin gets flipped because of the row-reverse.
+ */
+/**
+ * 3. Must supply both values to background-size or some browsers apply the single value to both directions
+ */
+/**
+ * 4. Override invalid state with focus state.
+ */
+/**
+ *  Mixin for use in:
+ *  - EuiCard
+ *  - EuiPageContent
+*/
+.kbnNews__flyout {
+  top: 49px;
+  height: calc(100% - 48px); }
+
+.kbnNewsFeed__headerAlert.euiHeaderAlert {
+  margin-bottom: 24px;
+  padding: 0 8px 24px;
+  border-bottom: 1px solid #D3DAE6;
+  border-top: none; }
+  .kbnNewsFeed__headerAlert.euiHeaderAlert .euiHeaderAlert__title {
+    color: #1a1c21;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+    line-height: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -.02em;
+    margin-bottom: 8px; }
+  .kbnNewsFeed__headerAlert.euiHeaderAlert .euiHeaderAlert__text {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 16px; }
+  .kbnNewsFeed__headerAlert.euiHeaderAlert .euiHeaderAlert__action {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.5; }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJ1aWxkL25vZGVfbW9kdWxlcy9AZWxhc3RpYy9ldWkvc3JjL2dsb2JhbF9zdHlsaW5nL3ZhcmlhYmxlcy9fZm9ybS5zY3NzIiwiYnVpbGQvbm9kZV9tb2R1bGVzL0BlbGFzdGljL2V1aS9zcmMvZ2xvYmFsX3N0eWxpbmcvbWl4aW5zL19iZXRhX2JhZGdlLnNjc3MiLCJidWlsZC9raWJhbmEtb3NzL3NyYy9sZWdhY3kvY29yZV9wbHVnaW5zL25ld3NmZWVkL3B1YmxpYy9pbmRleC5zY3NzIiwiYnVpbGQvbm9kZV9tb2R1bGVzL0BlbGFzdGljL2V1aS9zcmMvZ2xvYmFsX3N0eWxpbmcvbWl4aW5zL19idXR0b24uc2NzcyIsImJ1aWxkL25vZGVfbW9kdWxlcy9AZWxhc3RpYy9ldWkvc3JjL2dsb2JhbF9zdHlsaW5nL21peGlucy9fZm9ybS5zY3NzIiwiYnVpbGQvbm9kZV9tb2R1bGVzL0BlbGFzdGljL2V1aS9zcmMvZ2xvYmFsX3N0eWxpbmcvbWl4aW5zL19wYW5lbC5zY3NzIiwiYnVpbGQva2liYW5hLW9zcy9zcmMvc3JjL2xlZ2FjeS9jb3JlX3BsdWdpbnMvbmV3c2ZlZWQvcHVibGljL25wX3JlYWR5L2NvbXBvbmVudHMvaGVhZGVyX2FsZXJ0L19pbmRleC5zY3NzIiwiYnVpbGQvbm9kZV9tb2R1bGVzL0BlbGFzdGljL2V1aS9zcmMvZ2xvYmFsX3N0eWxpbmcvdmFyaWFibGVzL19zaXplLnNjc3MiLCJidWlsZC9ub2RlX21vZHVsZXMvQGVsYXN0aWMvZXVpL3NyYy9nbG9iYWxfc3R5bGluZy92YXJpYWJsZXMvX2NvbG9ycy5zY3NzIiwiYnVpbGQvbm9kZV9tb2R1bGVzL0BlbGFzdGljL2V1aS9zcmMvZ2xvYmFsX3N0eWxpbmcvbWl4aW5zL190eXBvZ3JhcGh5LnNjc3MiLCJidWlsZC9ub2RlX21vZHVsZXMvQGVsYXN0aWMvZXVpL3NyYy9nbG9iYWxfc3R5bGluZy9mdW5jdGlvbnMvX2NvbG9ycy5zY3NzIiwiYnVpbGQvbm9kZV9tb2R1bGVzL0BlbGFzdGljL2V1aS9zcmMvZ2xvYmFsX3N0eWxpbmcvdmFyaWFibGVzL190eXBvZ3JhcGh5LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBeUM2RSxNQUFBO0FBQ29CLE1BQUE7QUN6Q2pHOzs7RUNJRTtBQzhCRjs7O0VEMUJFO0FFMERGOztFRnZERTtBRTRMRjs7RUZ6TEU7QUdmRjs7OztDSG9CQztBSWxCRDtFQUNFLFNBQThCO0VBQzlCLHlCQUEyQyxFQUFBOztBQUc3QztFQUNFLG1CQ0gwQjtFREkxQixtQkNKMEI7RURLMUIsZ0NFUTBCO0VGUDFCLGdCQUFnQixFQUFBO0VBSmxCO0lHa0JFLGNDYjJDO0lDQzNDLGVKYmdCO0lJY2hCLGVBUHFDO0lGaUVyQyxnQkV4QnFCO0lBMUJyQixtQkFmcUM7SUYrQm5DLGdCRWtCdUI7SUZqQnZCLHNCQUFzQjtJSHhCdEIsa0JDWnVCLEVBQUE7RURJM0I7SUtNRSxlQTJCc0Q7SUExQnRELG1CQVBxQztJRjREckMsZ0JFbkJxQjtJTDVCbkIsbUJDcEJjLEVBQUE7RURPbEI7SUtNRSxlQTJCc0Q7SUExQnRELG1CQVBxQztJRjREckMsZ0JFbkJxQixFQUFBIiwiZmlsZSI6ImJ1aWxkL2tpYmFuYS1vc3Mvc3JjL2xlZ2FjeS9jb3JlX3BsdWdpbnMvbmV3c2ZlZWQvcHVibGljL2luZGV4LnNjc3MifQ== */

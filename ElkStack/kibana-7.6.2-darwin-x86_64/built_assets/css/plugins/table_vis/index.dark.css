@@ -1,0 +1,126 @@
+/* 1 */
+/* 1 */
+/**
+ * 1. Extend beta badges to at least 40% of the container's width
+ * 2. Fix for IE to ensure badges are visible outside of a <button> tag
+ */
+/**
+ * 1. Apply margin to all but last item in the flex.
+ * 2. Margin gets flipped because of the row-reverse.
+ */
+/**
+ * 3. Must supply both values to background-size or some browsers apply the single value to both directions
+ */
+/**
+ * 4. Override invalid state with focus state.
+ */
+/**
+ *  Mixin for use in:
+ *  - EuiCard
+ *  - EuiPageContent
+*/
+kbn-agg-table,
+kbn-agg-table-group {
+  display: block; }
+
+.kbnAggTable {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.kbnAggTable__paginated {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: auto; }
+  .kbnAggTable__paginated th {
+    text-align: left;
+    font-weight: 700; }
+  .kbnAggTable__paginated tr:hover td,
+  .kbnAggTable__paginated .kbnTableCellFilter {
+    background-color: #25262E; }
+
+.kbnAggTable__controls {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 8px 4px; }
+  .kbnAggTable__controls > paginate-controls {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+    margin: 0;
+    padding: 0; }
+
+.kbnTableCellFilter__hover {
+  position: relative;
+  /**
+   * 1. Center vertically regardless of row height.
+   */ }
+  .kbnTableCellFilter__hover .kbnTableCellFilter {
+    position: absolute;
+    white-space: nowrap;
+    right: 0;
+    top: 50%;
+    /* 1 */
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    /* 1 */
+    display: none; }
+  .kbnTableCellFilter__hover:hover .kbnTableCellFilter {
+    display: inline; }
+  .kbnTableCellFilter__hover:hover .kbnTableCellFilter__hover-show {
+    visibility: visible; }
+
+.kbnTableCellFilter__hover-show {
+  visibility: hidden; }
+
+.table-vis {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 100%;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  overflow: auto; }
+
+.table-vis-container kbn-agg-table-group > .table > tbody > tr > td {
+  border-top: 0px; }
+
+.table-vis-container .pagination-other-pages {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+
+.table-vis-container .pagination-size {
+  display: none; }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJ1aWxkL25vZGVfbW9kdWxlcy9AZWxhc3RpYy9ldWkvc3JjL2dsb2JhbF9zdHlsaW5nL3ZhcmlhYmxlcy9fZm9ybS5zY3NzIiwiYnVpbGQvbm9kZV9tb2R1bGVzL0BlbGFzdGljL2V1aS9zcmMvZ2xvYmFsX3N0eWxpbmcvbWl4aW5zL19iZXRhX2JhZGdlLnNjc3MiLCJidWlsZC9raWJhbmEtb3NzL3NyYy9sZWdhY3kvY29yZV9wbHVnaW5zL3Zpc190eXBlX3RhYmxlL3B1YmxpYy9pbmRleC5zY3NzIiwiYnVpbGQvbm9kZV9tb2R1bGVzL0BlbGFzdGljL2V1aS9zcmMvZ2xvYmFsX3N0eWxpbmcvbWl4aW5zL19idXR0b24uc2NzcyIsImJ1aWxkL25vZGVfbW9kdWxlcy9AZWxhc3RpYy9ldWkvc3JjL2dsb2JhbF9zdHlsaW5nL21peGlucy9fZm9ybS5zY3NzIiwiYnVpbGQvbm9kZV9tb2R1bGVzL0BlbGFzdGljL2V1aS9zcmMvZ2xvYmFsX3N0eWxpbmcvbWl4aW5zL19wYW5lbC5zY3NzIiwiYnVpbGQva2liYW5hLW9zcy9zcmMvc3JjL2xlZ2FjeS9jb3JlX3BsdWdpbnMvdmlzX3R5cGVfdGFibGUvcHVibGljL2FnZ190YWJsZS9fYWdnX3RhYmxlLnNjc3MiLCJidWlsZC9ub2RlX21vZHVsZXMvQGVsYXN0aWMvZXVpL3NyYy9nbG9iYWxfc3R5bGluZy92YXJpYWJsZXMvX3R5cG9ncmFwaHkuc2NzcyIsImJ1aWxkL25vZGVfbW9kdWxlcy9AZWxhc3RpYy9ldWkvc3JjL3RoZW1lcy9ldWkvZXVpX2NvbG9yc19kYXJrLnNjc3MiLCJidWlsZC9ub2RlX21vZHVsZXMvQGVsYXN0aWMvZXVpL3NyYy9nbG9iYWxfc3R5bGluZy92YXJpYWJsZXMvX3NpemUuc2NzcyIsImJ1aWxkL2tpYmFuYS1vc3Mvc3JjL3NyYy9sZWdhY3kvY29yZV9wbHVnaW5zL3Zpc190eXBlX3RhYmxlL3B1YmxpYy9wYWdpbmF0ZWRfdGFibGUvX3RhYmxlX2NlbGxfZmlsdGVyLnNjc3MiLCJidWlsZC9raWJhbmEtb3NzL3NyYy9zcmMvbGVnYWN5L2NvcmVfcGx1Z2lucy92aXNfdHlwZV90YWJsZS9wdWJsaWMvX3RhYmxlX3Zpcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXlDNkUsTUFBQTtBQUNvQixNQUFBO0FDekNqRzs7O0VDSUU7QUM4QkY7OztFRDFCRTtBRTBERjs7RUZ2REU7QUU0TEY7O0VGekxFO0FHZkY7Ozs7Q0hvQkM7QUlwQkQ7O0VBRUUsY0FBYyxFQUFBOztBQUdoQjtFQUNFLG9CQUFhO0VBQWIscUJBQWE7RUFBYixvQkFBYTtFQUFiLGFBQWE7RUFDYixtQkFBYztFQUFkLHNCQUFjO01BQWQsa0JBQWM7VUFBZCxjQUFjO0VBQ2QsNEJBQXNCO0VBQXRCLDZCQUFzQjtFQUF0Qiw4QkFBc0I7TUFBdEIsMEJBQXNCO1VBQXRCLHNCQUFzQixFQUFBOztBQUd4QjtFQUNFLG1CQUFjO0VBQWQsc0JBQWM7TUFBZCxrQkFBYztVQUFkLGNBQWM7RUFDZCxjQUFjLEVBQUE7RUFGaEI7SUFLSSxnQkFBZ0I7SUFDaEIsZ0JDd0N1QixFQUFBO0VEOUMzQjs7SUFXSSx5QkVMMkIsRUFBQTs7QUZTL0I7RUFDRSxtQkFBYztFQUFkLHNCQUFjO01BQWQsa0JBQWM7VUFBZCxjQUFjO0VBQ2Qsb0JBQWE7RUFBYixxQkFBYTtFQUFiLG9CQUFhO0VBQWIsYUFBYTtFQUNiLHlCQUFtQjtFQUFuQiwyQkFBbUI7TUFBbkIsc0JBQW1CO1VBQW5CLG1CQUFtQjtFQUNuQixlRzVCMEIsRUFBQTtFSHdCNUI7SUFPSSxtQkFBYztJQUFkLHNCQUFjO1FBQWQsa0JBQWM7WUFBZCxjQUFjO0lBQ2QsU0FBUztJQUNULFVBQVUsRUFBQTs7QUluQ2Q7RUFDRSxrQkFBa0I7RUFFbEI7O0lSbURFLEVRakRDO0VBTEw7SUFPSSxrQkFBa0I7SUFDbEIsbUJBQW1CO0lBQ25CLFFBQVE7SUFDUixRQUFRO0lBQUUsTUFBQTtJQUNWLG1DQUEyQjtZQUEzQiwyQkFBMkI7SUFBRSxNQUFBO0lBQzdCLGFBQWEsRUFBQTtFQVpqQjtJQWlCTSxlQUFlLEVBQUE7RUFqQnJCO0lBcUJNLG1CQUFtQixFQUFBOztBQUt6QjtFQUVFLGtCQUFrQixFQUFBOztBQ3pCcEI7RUFDRSxvQkFBYTtFQUFiLHFCQUFhO0VBQWIsb0JBQWE7RUFBYixhQUFhO0VBQ2IsNEJBQXNCO0VBQXRCLDZCQUFzQjtFQUF0Qiw4QkFBc0I7TUFBdEIsMEJBQXNCO1VBQXRCLHNCQUFzQjtFQUN0QixtQkFBYztFQUFkLHNCQUFjO01BQWQsa0JBQWM7VUFBZCxjQUFjO0VBQ2QsY0FBYyxFQUFBOztBQUdoQjtFQUVJLGVBQWUsRUFBQTs7QUFGbkI7RUFNSSxxQkFBeUI7RUFBekIsaUNBQXlCO01BQXpCLGtCQUF5QjtVQUF6Qix5QkFBeUIsRUFBQTs7QUFON0I7RUFVSSxhQUFhLEVBQUEiLCJmaWxlIjoiYnVpbGQva2liYW5hLW9zcy9zcmMvbGVnYWN5L2NvcmVfcGx1Z2lucy92aXNfdHlwZV90YWJsZS9wdWJsaWMvaW5kZXguc2NzcyJ9 */

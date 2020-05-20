@@ -1,0 +1,33 @@
+- key: pubsubbeat
+  title: pubsubbeat
+  description: >
+    A Pub/Sub message and its attributes
+  fields:
+    - name: message
+      type: text
+      required: true
+      description: >
+        Plain text message payload
+    - name: json
+      type: object
+      required: false
+      description: >
+        JSON decoded message payload (only if `json.enabled` is set to true in your config)
+    - name: message_id
+      type: text
+      required: true
+      description: >
+        ID assigned by the Pub/Sub server identifying this message
+    - name: publish_time
+      type: date
+      format: date
+      example: August 26th 2016, 12:35:53.332
+      required: true
+      description: >
+        The time at which the message was published.
+        This is populated by the Pub/Sub server
+    - name: attributes
+      type: object
+      required: false
+      description: >
+        Key-value pairs describing the current message

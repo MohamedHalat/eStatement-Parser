@@ -1,0 +1,211 @@
+/* 1 */
+/* 1 */
+/**
+ * 1. Extend beta badges to at least 40% of the container's width
+ * 2. Fix for IE to ensure badges are visible outside of a <button> tag
+ */
+/**
+ * 1. Apply margin to all but last item in the flex.
+ * 2. Margin gets flipped because of the row-reverse.
+ */
+/**
+ * 3. Must supply both values to background-size or some browsers apply the single value to both directions
+ */
+/**
+ * 4. Override invalid state with focus state.
+ */
+/**
+ *  Mixin for use in:
+ *  - EuiCard
+ *  - EuiPageContent
+*/
+#consoleRoot {
+  height: calc(100vh - calc(48px * 2));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: hidden; }
+
+.consoleContainer {
+  padding: 8px; }
+
+.conApp {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto; }
+
+.conApp__editor {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  position: relative; }
+
+.conApp__output {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 1px;
+      -ms-flex: 1 1 1px;
+          flex: 1 1 1px; }
+
+.conApp__textAreaLabelHack,
+.conApp__editorContent,
+.conApp__outputContent {
+  height: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 1px;
+      -ms-flex: 1 1 1px;
+          flex: 1 1 1px; }
+
+.conApp__editorActions {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  right: 16px;
+  line-height: 1;
+  min-width: 40px; }
+  .conApp__editorActions button {
+    line-height: inherit; }
+
+.conApp__editorActionButton {
+  padding: 0 4px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background: none; }
+
+.conApp__editorActionButton--success {
+  color: #017D73; }
+
+.conApp__resizer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 14px;
+      -ms-flex: 0 0 14px;
+          flex: 0 0 14px;
+  background-color: #fafbfd;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: ew-resize;
+  width: 14px; }
+  .conApp__resizer:hover {
+    background-color: #cce1f0; }
+  .conApp__resizer:focus, .conApp__resizer.active {
+    background-color: #006BB4;
+    color: #FFF; }
+
+.conApp__autoComplete {
+  position: absolute;
+  left: -1000px;
+  visibility: hidden;
+  /* by pass any other element in ace and resize bar, but not modal popups  */
+  z-index: 1002;
+  margin-top: 22px; }
+
+.conApp__settingsModal {
+  min-width: 460px; }
+
+.conHelp__example {
+  display: block;
+  height: 128px;
+  margin: 16px 0; }
+
+/* 1 */
+/* 1 */
+/**
+ * 1. Extend beta badges to at least 40% of the container's width
+ * 2. Fix for IE to ensure badges are visible outside of a <button> tag
+ */
+/**
+ * 1. Apply margin to all but last item in the flex.
+ * 2. Margin gets flipped because of the row-reverse.
+ */
+/**
+ * 3. Must supply both values to background-size or some browsers apply the single value to both directions
+ */
+/**
+ * 4. Override invalid state with focus state.
+ */
+/**
+ *  Mixin for use in:
+ *  - EuiCard
+ *  - EuiPageContent
+*/
+.conHistory {
+  -webkit-box-shadow: 0 12px 24px 0 rgba(65, 78, 101, 0.1), 0 6px 12px 0 rgba(65, 78, 101, 0.1), 0 4px 4px 0 rgba(65, 78, 101, 0.1), 0 2px 2px 0 rgba(65, 78, 101, 0.1);
+          box-shadow: 0 12px 24px 0 rgba(65, 78, 101, 0.1), 0 6px 12px 0 rgba(65, 78, 101, 0.1), 0 4px 4px 0 rgba(65, 78, 101, 0.1), 0 2px 2px 0 rgba(65, 78, 101, 0.1);
+  padding: 12px; }
+
+.conHistory__body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 320px; }
+  .conHistory__body > ul {
+    margin-bottom: 0; }
+
+.conHistory__body__spacer {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 1%;
+      -ms-flex: 0 0 1%;
+          flex: 0 0 1%; }
+
+.conHistory__reqs,
+.conHistory__viewer {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 49.5%;
+      -ms-flex: 0 0 49.5%;
+          flex: 0 0 49.5%; }
+
+.conHistory__reqs {
+  overflow: auto; }
+
+.conHistory__req {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .conHistory__req-selected {
+    background-color: #F5F7FA; }
+
+.conHistory__reqIcon {
+  color: #98A2B3; }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJ1aWxkL25vZGVfbW9kdWxlcy9AZWxhc3RpYy9ldWkvc3JjL2dsb2JhbF9zdHlsaW5nL3ZhcmlhYmxlcy9fZm9ybS5zY3NzIiwiYnVpbGQvbm9kZV9tb2R1bGVzL0BlbGFzdGljL2V1aS9zcmMvZ2xvYmFsX3N0eWxpbmcvbWl4aW5zL19iZXRhX2JhZGdlLnNjc3MiLCJidWlsZC9raWJhbmEtb3NzL3NyYy9sZWdhY3kvY29yZV9wbHVnaW5zL2NvbnNvbGUvcHVibGljL25wX3JlYWR5L2FwcGxpY2F0aW9uL3N0eWxlcy9pbmRleC5zY3NzIiwiYnVpbGQvbm9kZV9tb2R1bGVzL0BlbGFzdGljL2V1aS9zcmMvZ2xvYmFsX3N0eWxpbmcvbWl4aW5zL19idXR0b24uc2NzcyIsImJ1aWxkL25vZGVfbW9kdWxlcy9AZWxhc3RpYy9ldWkvc3JjL2dsb2JhbF9zdHlsaW5nL21peGlucy9fZm9ybS5zY3NzIiwiYnVpbGQvbm9kZV9tb2R1bGVzL0BlbGFzdGljL2V1aS9zcmMvZ2xvYmFsX3N0eWxpbmcvbWl4aW5zL19wYW5lbC5zY3NzIiwiYnVpbGQva2liYW5hLW9zcy9zcmMvc3JjL2xlZ2FjeS9jb3JlX3BsdWdpbnMvY29uc29sZS9wdWJsaWMvbnBfcmVhZHkvYXBwbGljYXRpb24vc3R5bGVzL19hcHAuc2NzcyIsImJ1aWxkL25vZGVfbW9kdWxlcy9AZWxhc3RpYy9ldWkvc3JjL2dsb2JhbF9zdHlsaW5nL3ZhcmlhYmxlcy9fc2l6ZS5zY3NzIiwiYnVpbGQvbm9kZV9tb2R1bGVzL0BlbGFzdGljL2V1aS9zcmMvZ2xvYmFsX3N0eWxpbmcvdmFyaWFibGVzL196X2luZGV4LnNjc3MiLCJidWlsZC9ub2RlX21vZHVsZXMvQGVsYXN0aWMvZXVpL3NyYy9nbG9iYWxfc3R5bGluZy92YXJpYWJsZXMvX2NvbG9ycy5zY3NzIiwiYnVpbGQvc3JjL2xlZ2FjeS91aS9wdWJsaWMvc3R5bGVzL19taXhpbnMuc2NzcyIsImJ1aWxkL25vZGVfbW9kdWxlcy9AZWxhc3RpYy9ldWkvc3JjL2dsb2JhbF9zdHlsaW5nL2Z1bmN0aW9ucy9fY29sb3JzLnNjc3MiLCJidWlsZC9raWJhbmEtb3NzL3NyYy9zcmMvbGVnYWN5L2NvcmVfcGx1Z2lucy9jb25zb2xlL3B1YmxpYy9ucF9yZWFkeS9hcHBsaWNhdGlvbi9zdHlsZXMvY29tcG9uZW50cy9faGVscC5zY3NzIiwiYnVpbGQva2liYW5hLW9zcy9zcmMvc3JjL2xlZ2FjeS9jb3JlX3BsdWdpbnMvY29uc29sZS9wdWJsaWMvbnBfcmVhZHkvYXBwbGljYXRpb24vc3R5bGVzL2NvbXBvbmVudHMvX2hpc3Rvcnkuc2NzcyIsImJ1aWxkL25vZGVfbW9kdWxlcy9AZWxhc3RpYy9ldWkvc3JjL2dsb2JhbF9zdHlsaW5nL21peGlucy9fc2hhZG93LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBeUM2RSxNQUFBO0FBQ29CLE1BQUE7QUN6Q2pHOzs7RUNJRTtBQzhCRjs7O0VEMUJFO0FFMERGOztFRnZERTtBRTRMRjs7RUZ6TEU7QUdmRjs7OztDSG9CQztBSWpCRDtFQUNFLG9DQUFzRDtFQUN0RCxvQkFBYTtFQUFiLHFCQUFhO0VBQWIsb0JBQWE7RUFBYixhQUFhO0VBQ2IsbUJBQWM7RUFBZCxzQkFBYztNQUFkLGtCQUFjO1VBQWQsY0FBYztFQUdkLGdCQUFnQixFQUFBOztBQUdsQjtFQUNFLFlDVnlCLEVBQUE7O0FEYTNCO0VBQ0Usb0JBQWE7RUFBYixxQkFBYTtFQUFiLG9CQUFhO0VBQWIsYUFBYTtFQUNiLG1CQUFjO0VBQWQsc0JBQWM7TUFBZCxrQkFBYztVQUFkLGNBQWMsRUFBQTs7QUFHaEI7RUFDRSxXQUFXO0VBQ1gsb0JBQWE7RUFBYixxQkFBYTtFQUFiLG9CQUFhO0VBQWIsYUFBYTtFQUNiLG1CQUFjO0VBQWQsc0JBQWM7TUFBZCxrQkFBYztVQUFkLGNBQWM7RUFHZCxrQkFBa0IsRUFBQTs7QUFHcEI7RUFDRSxvQkFBYTtFQUFiLHFCQUFhO0VBQWIsb0JBQWE7RUFBYixhQUFhO0VBQ2IsbUJBQWE7RUFBYixxQkFBYTtNQUFiLGlCQUFhO1VBQWIsYUFBYSxFQUFBOztBQUdmOzs7RUFHRSxZQUFZO0VBQ1osbUJBQWE7RUFBYixxQkFBYTtNQUFiLGlCQUFhO1VBQWIsYUFBYSxFQUFBOztBQUdmO0VBSUUsa0JBQWtCO0VBQ2xCLGFFL0J3QjtFRmdDeEIsTUFBTTtFQUVOLFdDbERnQjtFRG1EaEIsY0FBYztFQUVkLGVBQWUsRUFBQTtFQVhqQjtJQUVJLG9CQUFvQixFQUFBOztBQVl4QjtFQUNFLGNDdkQwQjtFRHdEMUIsd0JBQWdCO0tBQWhCLHFCQUFnQjtVQUFoQixnQkFBZ0I7RUFDaEIsWUFBWTtFQUNaLGdCQUFnQixFQUFBOztBQUdsQjtFQUNFLGNHOUR5QixFQUFBOztBSGlFM0I7RUl4Q0Usb0JBQWE7RUFBYixxQkFBYTtFQUFiLG9CQUFhO0VBQWIsYUFBYTtFQUNiLG1CQUZ3QztFQUV4QyxzQkFGd0M7TUFFeEMsa0JBRndDO1VBRXhDLGNBRndDO0VBR3hDLHlCQ3RCNkM7RUR1QjdDLHlCQUFtQjtFQUFuQiwyQkFBbUI7TUFBbkIsc0JBQW1CO1VBQW5CLG1CQUFtQjtFQUNuQix3QkFBdUI7RUFBdkIsK0JBQXVCO01BQXZCLHFCQUF1QjtVQUF2Qix1QkFBdUI7RUFDdkIsU0FBUztFQUNULHlCQUFpQjtLQUFqQixzQkFBaUI7TUFBakIscUJBQWlCO1VBQWpCLGlCQUFpQjtFQUdmLGlCQUFpQjtFQUNqQixXQVhzQyxFQUFBO0VBb0J4QztJQUNFLHlCQ3hDMkMsRUFBQTtFRDJDN0M7SUFFRSx5QkRuRHFCO0lDb0RyQixXRHJDcUIsRUFBQTs7QUh5RHpCO0VBQ0Usa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixrQkFBa0I7RUFDbEIsMkVBQUE7RUFDQSxhRTlEd0I7RUYrRHhCLGdCQUFnQixFQUFBOztBQUdsQjtFQUNFLGdCQUFnQixFQUFBOztBTW5GbEI7RUFDRSxjQUFjO0VBQ2QsYUFBb0I7RUFDcEIsY0FBa0IsRUFBQTs7QVpzQ3lELE1BQUE7QUFDb0IsTUFBQTtBQ3pDakc7OztFQ3lHRTtBQ3ZFRjs7O0VEMkVFO0FFM0NGOztFRjhDRTtBRXVGRjs7RUZwRkU7QUdwSEY7Ozs7Q0h5SEM7QVd2SEQ7RUNnQ0UscUtIdEIyQztVR3NCM0MsNkpIdEIyQztFRVIzQyxhTkEwQixFQUFBOztBTUc1QjtFQUNFLG9CQUFhO0VBQWIscUJBQWE7RUFBYixvQkFBYTtFQUFiLGFBQWE7RUFDYixhQUF1QixFQUFBO0VBRnpCO0lBSUksZ0JBQWdCLEVBQUE7O0FBSXBCO0VBQ0UsbUJBQVk7RUFBWixvQkFBWTtNQUFaLGdCQUFZO1VBQVosWUFBWSxFQUFBOztBQUdkOztFQUVFLG1CQUFlO0VBQWYsdUJBQWU7TUFBZixtQkFBZTtVQUFmLGVBQWUsRUFBQTs7QUFHakI7RUFDRSxjQUFjLEVBQUE7O0FBR2hCO0VBQ0Usb0JBQWE7RUFBYixxQkFBYTtFQUFiLG9CQUFhO0VBQWIsYUFBYTtFQUNiLHlCQUE4QjtFQUE5QixzQ0FBOEI7TUFBOUIsc0JBQThCO1VBQTlCLDhCQUE4QixFQUFBO0VBRTlCO0lBQ0UseUJKaEIyQixFQUFBOztBSW9CL0I7RUFDRSxjSm5CMkIsRUFBQSIsImZpbGUiOiJidWlsZC9raWJhbmEtb3NzL3NyYy9sZWdhY3kvY29yZV9wbHVnaW5zL2NvbnNvbGUvcHVibGljL25wX3JlYWR5L2FwcGxpY2F0aW9uL3N0eWxlcy9pbmRleC5zY3NzIn0= */

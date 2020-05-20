@@ -1,0 +1,24 @@
+# OS X
+.DS_Store
+
+# build & run
+pubsubbeat
+pubsubbeat.test
+build/
+data/
+logs/
+dist/
+dashboards/
+
+# IntelliJ IDEA
+.idea/
+.project
+*.iml
+
+# Python
+*.pyc
+
+# Backup files
+*~
+
+/vendor
