@@ -46,7 +46,6 @@ function compileFile(file, tableName) {
   pdf(dataBuffer, { pagerender: render_page }).then(function (data) {
     var allText = data.text.toString();
     if (tableName == "credit") {
-      //console.log(file, ' ', file.split("_")[1].split(" ")[0].replace(".pdf", ""));
       parseFile(allText.split("\n"), (file.substring(file.length - 14, file.indexOf("."))), tableName);
     }
     else{
@@ -98,31 +97,30 @@ function getAmount(file, i, transaction) {
 function parseFile(file, startDate, tableName) {
   var prev = 0;
   var dateBuffer = true;
-  // var subtotal = 0;
-  // console.log(file);
   var startDate = new Date(startDate);
+  
   for (var i = 0; i < file.length; i++) {
     if (file[i] == undefined) continue;
     var line = file[i].split(" ");
-    //console.log(file[i])
     if (line.length < 8 || line.includes("Page") || line[0] && ["Here's", "Amounts", "Date", "Primary", "Banking", ].includes(line[0]) || line[2] == "Closing") continue;
 
     if (line[2] == "Opening") {
       prev = Math.abs(parseFloat(line[line.length - 1].toString().replace(/,/g, "")));
       continue;
     }
-    //console.log(line);
-    // console.log(line[0] + " " + line[1] + " " + year);
+    
     var date = new Date(line[0] + " " + line[1]);
     if (!date.getDate()) continue;
     date.setFullYear(startDate.getFullYear());
     if (date.getMonth() == startDate.getMonth()) dateBuffer = false;
     if (date.getMonth() > startDate.getMonth() && dateBuffer) date.setFullYear((startDate.getFullYear() - 1));
+    
     var type = "";
+    var transaction = "";
     if (tableName == "credit"){
       var amount = -1 * parseFloat(line[line.length - 1]);
       line = line.filter(Boolean)
-      var transaction = line.myJoin(" ", 4, line.length - 4)
+      transaction = line.myJoin(" ", 4, line.length - 4)
       if (transaction.includes("TRSF FROM/DE ACCT/CPT")) amount = Math.abs(amount);
     }
     else{
@@ -134,8 +132,8 @@ function parseFile(file, startDate, tableName) {
       if(["Pre-Authorized Payment No"].includes(type)) type += " "+ line[5];
       transaction = transaction.substring(6).trim().replace(type, "").trim();
     }
-    console.log(transaction, file[i])
-    //push(date, type, Math.round((amount + Number.EPSILON) * 100) / 100, transaction.split('\'').join('"').substring(0, 100) , tableName);
+    //console.log(transaction, file[i])
+    push(date, type, Math.round((amount + Number.EPSILON) * 100) / 100, transaction.split('\'').join('"').substring(0, 100) , tableName);
   }
   // console.log({ subtotal: subtotal.toFixed(2), total: total.toFixed(2) })
 }
@@ -151,7 +149,9 @@ function push(date, type, amount, transaction, tableName) {
   if (tableName == "credit") {
     type = "";
   }
-  if(amount.toString() == "NaN") return;
+  if(amount.toString() == "NaN"){
+    console.error("Amount Must Be A Valid Number!", {date: date, type: type, amount: amount, transaction: transaction, table: tableName})
+  }
 
   numberOfQueries[tableName]++;
   //console.log(`INSERT INTO finance.${tableName} (account_Type, type, date, transaction, amount) VALUES ('${tableName}', '${type}', date('${date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()}'), '${transaction}', '${amount}');`);
@@ -162,9 +162,16 @@ function push(date, type, amount, transaction, tableName) {
 
 }
 
+/**
+  * Runs through the DB and applies an MYSQL that adds a category 
+  * based on keywords in transactions.
+  *
+  */
 function createCategory(tableName){
   console.log("INSERTING CATEFORY INTO", tableName );
-  var queries = categorizer;
+  // Categorizer is a MySQL string
+  //eg: 'set category = "GAS AND PARKING" where transaction like "%PARKING%"; set...'
+  var queries = categorizer; 
 
   var num = {"credit": 0, "debit": 0};
   var ran ={"credit": 0, "debit": 0};
